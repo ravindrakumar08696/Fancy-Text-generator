@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Text Generator</title>
+    <style>
+        textarea {
+            width: 600px;
+            height: 600px;
+        }
+        .input_center{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            padding: 10px;
+            margin-block: 10px;
+            row-gap: 20px;
+            background-color: tan;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+        button :hover{
+            background-color: darkblue;
+            color: white;
+        }
+        .section_div{
+            display: flex;
+            justify-content: center;
+        }
+        .main_div{
+            background-image: url(./pexels-pixabay-259915.jpg);
+        }
+    </style> 
+</head>
+<body>
+    <div class="main_div">
+    <div class="input_center">
+    <textarea type="text" placeholder="Input your text here" contenteditable></textarea>
+    </div>
+    <div class="section_div">
+    <button onclick="show('bold')">BOLD</button>
+    <button onclick="show('italic')">ITALIC</button>
+    <button onclick="show('underline')">UNDERLINE</button>
+    <button onclick="show('serif')">SERIF</button>
+    <button onclick="show('fantasy')">FANTASY</button>
+    <button onclick="show('cursive')">CURSIVE</button>
+    <button onclick="show('monospace')">MONOSPACE</button>
+    <button onclick="show('normal')">NORMAL</button>
+    </div>
+</div>
+    <script>
+        function show(data){
+        let result=document.querySelector('textarea')
+        switch(data){
+            case 'bold':
+                result.style.fontWeight=result.style.fontWeight==='bold'?'normal':'bold';
+                break;
+            case 'italic':
+                result.style.fontStyle=result.style.fontStyle==='italic'?'normal':'italic';
+                break;
+            case 'underline':
+                result.style.textDecoration=result.style.textDecoration==='underline'?'none':'underline';
+                break;
+
+            case 'serif':
+                result.style.fontFamily=result.style.fontFamily==='serif'?'normal':'serif';
+                break;
+            case 'cursive':
+                result.style.fontFamily=result.style.fontFamily==='cursive'?'normal':'cursive';
+                break;
+            case 'fantasy':
+                result.style.fontFamily=result.style.fontFamily==='fantasy'?'normal':'fantasy';
+                break;
+            case 'monospace':
+                result.style.fontFamily=result.style.fontFamily==='monospace'?'normal':'monospace';
+                break;
+            case 'normal':
+                result.style.fontStyle=result.style.fontStyle==='normal'?'none':'normal';
+                result.style.fontFamily=result.style.fontFamily==='normal'?'none':'normal';
+                result.style.textDecoration=result.style.textDecoration==='normal'?'none':'normal';
+                result.style.fontWeight=result.style.fontWeight==='normal'?'normal':'normal';
+                result.style.fontFamily=result.style.fontFamily==='normal'?'normal':'normal ';
+                break;
+            
+        }
+        }
+    </script>
+</body>
+</html>
